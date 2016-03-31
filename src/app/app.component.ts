@@ -7,6 +7,7 @@ import {RouteConfig, Router} from 'angular2/router';
 import {Home} from './home';
 import {AppState} from './app.service';
 import {RouterActive} from './router-active';
+import {Login} from './login';
 
 /*
  * App Component
@@ -38,10 +39,13 @@ import {RouterActive} from './router-active';
   template: `
     <header>
       <nav>
-        <h1>Hello {{ name }}</h1>
-        <ul>
+        <h1> {{ name }}</h1>
+      <!--  <ul>
           <li router-active>
             <a [routerLink]=" ['Index'] ">Index</a>
+          </li>
+           <li router-active>
+            <a [routerLink]=" ['Login'] ">Login</a>
           </li>
           <li router-active>
             <a [routerLink]=" ['Home'] ">Home</a>
@@ -49,7 +53,7 @@ import {RouterActive} from './router-active';
           <li router-active>
             <a [routerLink]=" ['About'] ">About</a>
           </li>
-        </ul>
+        </ul>-->
       </nav>
     </header>
 
@@ -57,25 +61,26 @@ import {RouterActive} from './router-active';
       <router-outlet></router-outlet>
     </main>
 
-    <footer>
+   <!-- <footer>
       WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a>
       <div>
         <img [src]="angularclassLogo" width="10%">
       </div>
-    </footer>
+    </footer>-->
 
-    <pre>this.state = {{ state | json }}</pre>
+   <!-- <pre>this.state = {{ state | json }}</pre> -->
   `
 })
 @RouteConfig([
-  { path: '/',      name: 'Index', component: Home, useAsDefault: true },
+  { path: '/',      name: 'Login', component: Login, useAsDefault: true },
+  { path: '/login',  name: 'Login',  component: Login },
   { path: '/home',  name: 'Home',  component: Home },
   // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
   { path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') },
 ])
 export class App {
   angularclassLogo = 'assets/img/angularclass-avatar.png';
-  name = 'Angular 2 Webpack Starter';
+  name = 'RBC Royal Bank';
   url = 'https://twitter.com/AngularClass';
 
   constructor(public appState: AppState) {}
