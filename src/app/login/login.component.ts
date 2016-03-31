@@ -29,6 +29,7 @@ export class Login {
       .subscribe(
         response => {
           console.log (response);
+          localStorage.setItem('jwt','1221212');
           this.router.parent.navigateByUrl('/home');
         },
         error => {

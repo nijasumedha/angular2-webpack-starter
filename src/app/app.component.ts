@@ -80,7 +80,7 @@ import {Login} from './login';
 ])
 export class App {
   angularclassLogo = 'assets/img/angularclass-avatar.png';
-  name = 'RBC Royal Bank';
+  name = '';
   url = 'https://twitter.com/AngularClass';
 
   constructor(public appState: AppState) {}
