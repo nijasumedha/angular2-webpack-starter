@@ -8,6 +8,7 @@ import {Home} from './home';
 import {AppState} from './app.service';
 import {RouterActive} from './router-active';
 import {Login} from './login';
+import {AuthRouterOutlet} from './auth-router-outlet';
 
 /*
  * App Component
@@ -17,7 +18,7 @@ import {Login} from './login';
   selector: 'app',
   pipes: [ ],
   providers: [ ],
-  directives: [ RouterActive ],
+  directives: [ RouterActive, AuthRouterOutlet ],
   styles: [`
     h1 {
       font-family: Arial, Helvetica, sans-serif
@@ -40,35 +41,13 @@ import {Login} from './login';
     <header>
       <nav>
         <h1> {{ name }}</h1>
-      <!--  <ul>
-          <li router-active>
-            <a [routerLink]=" ['Index'] ">Index</a>
-          </li>
-           <li router-active>
-            <a [routerLink]=" ['Login'] ">Login</a>
-          </li>
-          <li router-active>
-            <a [routerLink]=" ['Home'] ">Home</a>
-          </li>
-          <li router-active>
-            <a [routerLink]=" ['About'] ">About</a>
-          </li>
-        </ul>-->
       </nav>
     </header>
 
     <main>
-      <router-outlet></router-outlet>
+      <auth-router-outlet></auth-router-outlet>
     </main>
 
-   <!-- <footer>
-      WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a>
-      <div>
-        <img [src]="angularclassLogo" width="10%">
-      </div>
-    </footer>-->
-
-   <!-- <pre>this.state = {{ state | json }}</pre> -->
   `
 })
 @RouteConfig([
